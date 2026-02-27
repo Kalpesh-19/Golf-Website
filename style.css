@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: #ffffff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+
+#cursor-blur{
+    height: 300px;
+    width: 300px;
+    background-color: #96c11e52;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(40px);
+    z-index: 9;
+}
+
+
+#nav {
+    height: 145px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+    gap: 35px; /* margin */ 
+    justify-content: flex-start;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav img{
+    height: 75px;
+}
+
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;   
+    z-index: -1;
+}
+
+#main{
+     position: relative;
+     background-color: rgba(0, 0, 0, 0.37);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 90px;
+    font-weight: 900;
+    position: relative;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+#page1 h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+/*sudo elements*/
+#page1 h1::before{
+    content: "Eat. Drink. Play.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 2px #95C11E;/* text var boundary lavne*/
+    z-index: -1;
+}
+
+#page1 p {
+    font-size: 19px;
+    font-weight: 520;
+    width: 45%;
+}
+
+#page2{
+    min-height: 100vh; /*Element ki minimum height full screen ke barabar hogi ➡️ Content zyada hua to height aur badh jayegi ➡️ Lekin height kabhi 100vh se kam nahi hogi*/
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller{
+    /* background-color: red; */
+    white-space: nowrap; /* text next line la nahi janar */
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+/* horizontal scroller remove karnya sathi */
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+#scroller h4{
+    display: inline-block;
+    font-size: 100px;
+    font-weight: 900;
+    font-family: sans-serif;
+    margin-right: 10px;
+    transition: all linear 0.5s; /* animation effect (changes slow karayche astil tr ) */ 
+    color: transparent;
+    -webkit-text-stroke: 2px #95C11E;
+}
+
+#scroller h4:hover{
+    color: #95C11E;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height: 40vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+}
+
+#about-us img{
+    height: 140px;
+    width: 140px;
+    border-radius: 15px;    
+    object-fit: cover;
+}
+
+ #about-us-in {
+    width: 55%;
+    text-align: center;
+ } 
+
+ #about-us-in h3{
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 20px;
+ }
+
+ #about-us-in p{
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 30px; /*don line madhil gap */
+ }
+
+
+ #card-container{
+    /* background-color: red; */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+    z-index: 10;
+ }
+
+ .card{
+    height: 80%;
+    width: 24%;
+    /* background-color: blue; */
+    border-radius: 25px;
+    background-size: cover; /*Background image poore container ko fill karegi*/
+    background-position: center; /*Background image center me align hogi*/
+    overflow: hidden;
+    transition: all ease 0.6s;
+ }
+
+
+ #card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&sharp=1);
+ }
+
+ #card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&sharp=1);
+ }
+
+ #card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&sharp=1);
+ }
+
+ .overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 23px;
+    padding-top: 90px;
+    opacity: 0;
+    transition: all ease 0.6s;
+ }
+
+ .overlay h3{
+    color: black;
+    font-family: sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 15px;
+    font-weight: 800;
+ }
+
+ .overlay p{
+    color: black;
+    font-family: 'montserrat';
+    font-size: 18px;
+ }
+
+ .card:hover  .overlay{
+    opacity: 1;
+ }
+
+.card:hover {
+    transform: rotate3d(-1,1,0,20deg);/*didn't understand yesterday*/
+}
+
+#green-div{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #0F9F3B, #AEE223);/*ekach div la multiple background-colors dyayche astil tr */
+}
+
+#green-div h3{
+    width: 50%;
+    line-height: 45px;
+    color: #000;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 12%;
+}
+
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page3>p{
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    width: 55%;
+    text-align: center;
+    line-height: 40px;
+}
