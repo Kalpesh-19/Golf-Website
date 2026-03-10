@@ -433,7 +433,7 @@ video {
 
 #page4 h1{
     font-size: 80px;
-    position: absolute;
+    position: absolute;/*heading background la jaych reason*/
     top:-12%;
     font-family: sans-serif;
     font-weight: 900;
